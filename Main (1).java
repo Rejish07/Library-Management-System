@@ -50,7 +50,7 @@ public class Main
                         borrow(sc, lib, currentUser);
                     }
                     if(val == 2) {
-                        System.out.println("User " + user.getName() + "'s Available  Books");
+                        System.out.println("User " + currentUser.getName() + "'s Available  Books");
                         List<Book> userBooks = currentUser.getList();
                         for(Book b : userBooks) {
                             System.out.println(b);
