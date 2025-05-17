@@ -63,7 +63,7 @@ public class Main
         }
     }
 
-    public static User addUser(Scanner sc, Library lib) {
+    public static void addUser(Scanner sc, Library lib) {
         
         System.out.println("Enter User Name:");
         String name = sc.nextLine();
@@ -73,7 +73,6 @@ public class Main
         String contactInfo = sc.nextLine();
         List<User> userList = lib.getUserlist();
         userList.add(new User(name, userId, contactInfo));
-        return userList.get(userList.size() - 1);
         
     }
 
