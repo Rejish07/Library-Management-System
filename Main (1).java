@@ -24,13 +24,14 @@ public class Main
                     break;
                 case 3:
                     System.out.println("add User : ");
-                    User user = addUser(sc, lib);
+                    addUser(sc, lib);
                     break;
-                case 3:
+                case 4:
                     System.out.println("existing User's borrow or return books : ");
                     System.out.println("User fesilities : ");
                     System.out.println("1. Borrow Books\n2. Return Books");
                     int val = sc.nextInt();
+                    
                     if(val == 1) {
                         borrow(sc, lib, user);
                     }
