@@ -23,6 +23,8 @@ public class Main
                     addbooks(sc, lib);
                     break;
                 case 3:
+                    break;
+                case 3:
                     User user = addUser(sc, lib);
                     System.out.println("User fesilities : ");
                     System.out.println("1. Borrow Books\n2. Return Books");
