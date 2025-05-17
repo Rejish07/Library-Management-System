@@ -30,29 +30,43 @@ public class Main
                     System.out.println("existing User's borrow or return books : ");
                     System.out.println("User fesilities : ");
                     System.out.println("1. Borrow Books\n2. Return Books");
+                    System.out.println("enter user id");
+                    int userId = sc.nextInt();
+                    List<User> userlist = lib.getUserlist();
+                    User currentUser;
+                    for(User user: userList) {
+                        if(user.getUserid() == userId) {
+                            currentUser = user; 
+                            break;
+                        }
+                    }
+                    if(currentUser == null) {
+                        System.out.println("user is not found!");
+                        break;
+                    }
                     int val = sc.nextInt();
                     
                     if(val == 1) {
-                        borrow(sc, lib, user);
+                        borrow(sc, lib, currentUser);
                     }
                     if(val == 2) {
                         System.out.println("User " + user.getName() + "'s Available  Books");
-                        List<Book> userBooks = user.getList();
+                        List<Book> userBooks = currentUser.getList();
                         for(Book b : userBooks) {
                             System.out.println(b);
                         }
                         System.out.println("Montion a book ID to return");
                         int id = sc.nextInt();
-                        Book bookToReturn = user.searchBooks(id);
+                        Book bookToReturn = currentUser.searchBooks(id);
                         if(bookToReturn != null) {
-                            returnBook(sc, lib, user, bookToReturn);
+                            returnBook(sc, lib, currentUser, bookToReturn);
                         }
                     }
                     break;
-                case 4:    
+                case 5:    
                     lib.listOfBooks();
                     break;
-                case 5:
+                case 6:
                     List<User> userlist = lib.getUserlist();
                      for(User us : userlist) {
                          us.getUserDetails();
